@@ -28,6 +28,17 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted)}.foote
 @media(max-width:430px){.products{grid-template-columns:1fr}.product-art{height:180px}}
 </style>
 </head>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("PWA Ready"))
+      .catch(error => console.error("PWA Error:", error));
+  });
+}
+</script>
+
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#">NOVA<span>.</span>STORE</a>
